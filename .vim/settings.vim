@@ -1,5 +1,6 @@
 source ~/.vim/settings/multi_cursor.vim
 source ~/.vim/settings/editor.vim
+source ~/.vim/settings/rubocop.vim
 source ~/.vim/settings/f2_paste.vim
 source ~/.vim/settings/langmap.vim
 source ~/.vim/settings/set_cursor_position.vim

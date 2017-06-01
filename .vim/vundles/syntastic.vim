@@ -1,1 +1,1 @@
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
