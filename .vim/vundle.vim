@@ -17,7 +17,6 @@ source ~/.vim/vundles/nerdtree.vim
 source ~/.vim/vundles/rspec.vim
 source ~/.vim/vundles/supertab.vim
 source ~/.vim/vundles/syntastic.vim
-source ~/.vim/vundles/typescript.vim
 source ~/.vim/vundles/vim-airline.vim
 source ~/.vim/vundles/vim-coffee-script.vim
 source ~/.vim/vundles/vim-colors-solarized.vim
@@ -25,8 +24,10 @@ source ~/.vim/vundles/vim-css3-syntax.vim
 source ~/.vim/vundles/vim-easymotion.vim
 source ~/.vim/vundles/vim-elixir.vim
 source ~/.vim/vundles/vim-indexed-search.vim
-source ~/.vim/vundles/vim-mustache-handlebars.vim
+source ~/.vim/vundles/vim-javascript.vim
+source ~/.vim/vundles/vim-jsx.vim
 source ~/.vim/vundles/vim-multiple-cursors.vim
+source ~/.vim/vundles/vim-mustache-handlebars.vim
 source ~/.vim/vundles/vim-rails.vim
 source ~/.vim/vundles/vim-railscasts-theme.vim
 source ~/.vim/vundles/vim-ruby.vim
