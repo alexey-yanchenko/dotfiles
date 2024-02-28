@@ -1,0 +1,6 @@
+vim.keymap.set("n", "<tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+vim.keymap.set("n", "<S-tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+vim.keymap.set("n", "<leader>h", "<Cmd>HopWord<CR>", { desc = "Easy motion"})
+vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
+vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
+vim.keymap.set("n", "<leader>m", "<Cmd>MCstart<cr>", { desc = "Multicursor"})
