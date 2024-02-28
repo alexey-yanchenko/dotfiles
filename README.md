@@ -15,6 +15,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 vim +BundleInstall
 ```
+### Requirements
+- Packages
+```
+sudo apt-get install ripgrep fd-find cmake
+```
+- [Nerd Font](https://www.nerdfonts.com/) (v3.0 or greater) (optional, but needed to display some icons)
+
 # Manage
 * Add new
 ```
