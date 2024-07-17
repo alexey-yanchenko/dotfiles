@@ -47,8 +47,8 @@ return {
           }
         },
       })
-      -- lspconfig.rubocop.setup({
-      -- 	cmd = { "docker", "compose", "exec", "web", "bundle", "exec", "rubocop" , "--lsp" },
+      -- lspconfig.ruby_ls.setup({
+      -- 	cmd = { "docker", "compose", "exec", "web", "bundle", "exec", "ruby-lsp" },
       --   filetypes = { "ruby" },
       --   root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
       -- })
