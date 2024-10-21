@@ -1,7 +1,7 @@
 # Install
 * Run
 ```
-curl -Lks http://bit.do/install-dotfiles | /bin/bash
+curl -Lks https://raw.githubusercontent.com/alexey-yanchenko/dotfiles/refs/heads/master/.bin/install.sh | /bin/bash
 ```
 
 * Clone [Vundle](https://github.com/VundleVim/Vundle.vim)
