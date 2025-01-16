@@ -6,6 +6,7 @@ window-decoration = false
 clipboard-paste-protection = false
 keybind = alt+t=toggle_window_decorations
 background = #2E3436
+foreground = #D3D7CF
 palette = 0=#171421
 palette = 1=#C01C28
 palette = 2=#26A269
