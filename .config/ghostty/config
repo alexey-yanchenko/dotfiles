@@ -1,0 +1,24 @@
+font-family = UbuntuMono Nerd Font
+font-size = 13
+font-synthetic-style = false
+window-theme = dark
+window-decoration = false
+clipboard-paste-protection = false
+keybind = alt+t=toggle_window_decorations
+background = #2E3436
+palette = 0=#171421
+palette = 1=#C01C28
+palette = 2=#26A269
+palette = 3=#A2734C
+palette = 4=#12488B
+palette = 5=#A347BA
+palette = 6=#2AA1B3
+palette = 7=#D0CFCC
+palette = 8=#5E5C64
+palette = 9=#F66151
+palette = 10=#33D17A
+palette = 11=#E9AD0C
+palette = 12=#2A7BDE
+palette = 13=#C061CB
+palette = 14=#33C7DE
+palette = 15=#FFFFFF
