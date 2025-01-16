@@ -3,6 +3,8 @@ font-size = 13
 font-synthetic-style = false
 window-theme = dark
 window-decoration = false
+window-padding-x = 0
+window-padding-y = 0
 clipboard-paste-protection = false
 keybind = alt+t=toggle_window_decorations
 background = #2E3436
