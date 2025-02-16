@@ -18,7 +18,7 @@ vim +BundleInstall
 ### Requirements
 - Packages
 ```
-sudo apt-get install ripgrep fd-find cmake
+ripgrep fd-find cmake nvim yazi
 ```
 - [Nerd Font](https://www.nerdfonts.com/) (v3.0 or greater) (optional, but needed to display some icons)
 
