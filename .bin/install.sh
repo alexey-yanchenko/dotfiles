@@ -1,6 +1,6 @@
 git clone --bare https://github.com/alexey-yanchenko/dotfiles.git $HOME/.cfg
 function config {
-   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+   git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 mkdir -p .config-backup
 config checkout
@@ -13,4 +13,5 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bash_aliases
+echo "alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bash_aliases
+echo "[[ -f ~/.ebash ]] && . ~/.ebash" >> $HOME/.bashrc
