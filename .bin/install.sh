@@ -13,5 +13,5 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 
-echo "alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bash_aliases
+echo "alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 echo "[[ -f ~/.ebash ]] && . ~/.ebash" >> $HOME/.bashrc

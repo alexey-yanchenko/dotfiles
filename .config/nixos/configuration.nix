@@ -11,12 +11,11 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -58,63 +57,63 @@
       profiles = {
         user = {
           databases = [
-            {
-              lockAll = true;
-              settings = {
-                "org/gnome/desktop/wm/keybindings" = {
-		  maximize = [ "<Control><Alt>Up" ];
-		  unmaximize = [ "<Control><Alt>Down" ];
-                  switch-input-source = [ "<Alt>Shift_L" ];
-		  switch-input-source-backward = [ "<Shift>Alt_L" ];
-		  switch-to-workspace-up = [""];
-		  switch-to-workspace-down = [""];
-                };
-
-                "org/gnome/desktop/input-sources" = {
-                  sources = [
-                    (lib.gvariant.mkTuple [
-                      "xkb"
-                      "us"
-                    ])
-                    (lib.gvariant.mkTuple [
-                      "xkb"
-                      "ru"
-                    ])
-                  ];
-                };
-
-		"org/gnome/shell" = {
-		  disable-user-extensions = false;
-		  enabled-extensions = [
-		    "dash-to-dock@micxgx.gmail.com"
-		    "user-theme@gnome-shell-extensions.gcampax.github.com"
-		    "system-monitor@gnome-shell-extensions.gcampax.github.com"
-		    "status-icons@gnome-shell-extensions.gcampax.github.com"
-		  ];
-		  favorite-apps =  [
-		    "google-chrome.desktop" 
-		    "com.mitchellh.ghostty.desktop"
-		    "org.telegram.desktop.desktop"
-		    "org.gnome.Nautilus.desktop"
-		  ];
-		};
-		"org/gnome/shell/extensions/system-monitor" = {
-		  show-swap = false;
-		  show-upload = false;
-		};
-		"org/gnome/shell/extensions/dash-to-dock" = {
-		  dash-max-icon-size = lib.gvariant.mkInt32(32);
-		  dock-fixed = false;
-		  always-center-icons = true;
-		  custom-theme-shrink = true;
-		  extend-height = true;
-		  show-trash = false;
-		};
-		"org/gnome/desktop/interface" = {
-		  icon-theme = "Yaru";
-		};
+          {
+            lockAll = true;
+            settings = {
+              "org/gnome/desktop/wm/keybindings" = {
+                maximize = [ "<Control><Alt>Up" ];
+                unmaximize = [ "<Control><Alt>Down" ];
+                switch-input-source = [ "<Alt>Shift_L" ];
+                switch-input-source-backward = [ "<Shift>Alt_L" ];
+                switch-to-workspace-up = [""];
+                switch-to-workspace-down = [""];
               };
-            }
+
+              "org/gnome/desktop/input-sources" = {
+                sources = [
+                  (lib.gvariant.mkTuple [
+                   "xkb"
+                   "us"
+                  ])
+                    (lib.gvariant.mkTuple [
+                     "xkb"
+                     "ru"
+                    ])
+                ];
+              };
+
+              "org/gnome/shell" = {
+                disable-user-extensions = false;
+                enabled-extensions = [
+                  "dash-to-dock@micxgx.gmail.com"
+                    "user-theme@gnome-shell-extensions.gcampax.github.com"
+                    "system-monitor@gnome-shell-extensions.gcampax.github.com"
+                    "status-icons@gnome-shell-extensions.gcampax.github.com"
+                ];
+                favorite-apps =  [
+                  "google-chrome.desktop"
+                    "com.mitchellh.ghostty.desktop"
+                    "org.telegram.desktop.desktop"
+                    "org.gnome.Nautilus.desktop"
+                ];
+              };
+              "org/gnome/shell/extensions/system-monitor" = {
+                show-swap = false;
+                show-upload = false;
+              };
+              "org/gnome/shell/extensions/dash-to-dock" = {
+                dash-max-icon-size = lib.gvariant.mkInt32(32);
+                dock-fixed = false;
+                always-center-icons = true;
+                custom-theme-shrink = true;
+                extend-height = true;
+                show-trash = false;
+              };
+              "org/gnome/desktop/interface" = {
+                icon-theme = "Yaru";
+              };
+            };
+          }
           ];
         };
       };
