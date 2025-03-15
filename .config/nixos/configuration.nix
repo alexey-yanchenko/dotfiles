@@ -121,6 +121,9 @@
               "org/gnome/desktop/interface" = {
                 icon-theme = "Yaru";
               };
+              "org/gnome/settings-daemon/plugins/power" = {
+                sleep-inactive-ac-type = "nothing";
+              };
             };
           }
           ];
