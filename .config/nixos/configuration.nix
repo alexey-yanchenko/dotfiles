@@ -74,6 +74,9 @@
                 switch-to-workspace-up = [""];
                 switch-to-workspace-down = [""];
               };
+              "org/gnome/desktop/wm/preferences" = {
+                button-layout = ":minimize,maximize,close";
+              };
 
               "org/gnome/desktop/input-sources" = {
                 sources = [
