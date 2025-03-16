@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, inputs, pkgs, lib, ... }:
 
 {
   imports =
@@ -58,79 +58,81 @@
     options = "caps:escape";
   };
 
-  programs = {
-    dconf = {
-      profiles = {
-        user = {
-          databases = [
-          {
-            lockAll = true;
-            settings = {
-              "org/gnome/desktop/wm/keybindings" = {
-                maximize = [ "<Control><Alt>Up" ];
-                unmaximize = [ "<Control><Alt>Down" ];
-                switch-input-source = [ "<Alt>Shift_L" ];
-                switch-input-source-backward = [ "<Shift>Alt_L" ];
-                switch-to-workspace-up = [""];
-                switch-to-workspace-down = [""];
-              };
-              "org/gnome/desktop/wm/preferences" = {
-                button-layout = ":minimize,maximize,close";
-              };
+  programs.dconf.profiles.user = {
+    databases = [
+    {
+      lockAll = true;
+      settings = {
+        "org/gnome/desktop/wm/keybindings" = {
+          maximize = [ "<Control><Alt>Up" ];
+          unmaximize = [ "<Control><Alt>Down" ];
+          switch-input-source = [ "<Alt>Shift_L" ];
+          switch-input-source-backward = [ "<Shift>Alt_L" ];
+          switch-to-workspace-up = [""];
+          switch-to-workspace-down = [""];
+        };
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = ":minimize,maximize,close";
+        };
 
-              "org/gnome/desktop/input-sources" = {
-                sources = [
-                  (lib.gvariant.mkTuple [
-                   "xkb"
-                   "us"
-                  ])
-                    (lib.gvariant.mkTuple [
-                     "xkb"
-                     "ru"
-                    ])
-                ];
-              };
-
-              "org/gnome/shell" = {
-                disable-user-extensions = false;
-                enabled-extensions = [
-                  "dash-to-dock@micxgx.gmail.com"
-                    "user-theme@gnome-shell-extensions.gcampax.github.com"
-                    "system-monitor@gnome-shell-extensions.gcampax.github.com"
-                    "status-icons@gnome-shell-extensions.gcampax.github.com"
-                ];
-                favorite-apps =  [
-                  "google-chrome.desktop"
-                    "com.mitchellh.ghostty.desktop"
-                    "org.telegram.desktop.desktop"
-                    "org.gnome.Nautilus.desktop"
-                ];
-              };
-              "org/gnome/shell/extensions/system-monitor" = {
-                show-swap = false;
-                show-upload = false;
-              };
-              "org/gnome/shell/extensions/dash-to-dock" = {
-                dash-max-icon-size = lib.gvariant.mkInt32(32);
-                dock-fixed = false;
-                always-center-icons = true;
-                custom-theme-shrink = true;
-                extend-height = true;
-                show-trash = false;
-              };
-              "org/gnome/desktop/interface" = {
-                icon-theme = "Yaru";
-              };
-              "org/gnome/settings-daemon/plugins/power" = {
-                sleep-inactive-ac-type = "nothing";
-              };
-            };
-          }
+        "org/gnome/desktop/input-sources" = {
+          sources = [
+            (lib.gvariant.mkTuple [
+             "xkb"
+             "us"
+            ])
+              (lib.gvariant.mkTuple [
+               "xkb"
+               "ru"
+              ])
           ];
         };
+
+        "org/gnome/shell" = {
+          disable-user-extensions = false;
+          enabled-extensions = [
+            "dash-to-dock@micxgx.gmail.com"
+              "user-theme@gnome-shell-extensions.gcampax.github.com"
+              "system-monitor@gnome-shell-extensions.gcampax.github.com"
+              "status-icons@gnome-shell-extensions.gcampax.github.com"
+          ];
+          favorite-apps =  [
+            "google-chrome.desktop"
+              "com.mitchellh.ghostty.desktop"
+              "org.telegram.desktop.desktop"
+              "org.gnome.Nautilus.desktop"
+          ];
+        };
+        "org/gnome/shell/extensions/system-monitor" = {
+          show-swap = false;
+          show-upload = false;
+        };
+        "org/gnome/shell/extensions/dash-to-dock" = {
+          dash-max-icon-size = lib.gvariant.mkInt32(32);
+          dock-fixed = false;
+          always-center-icons = true;
+          custom-theme-shrink = true;
+          extend-height = true;
+          show-trash = false;
+        };
+        "org/gnome/desktop/interface" = {
+          icon-theme = "Yaru";
+        };
+        "org/gnome/settings-daemon/plugins/power" = {
+          sleep-inactive-ac-type = "nothing";
+        };
       };
-    };
+    }
+    ];
   };
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -143,12 +145,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -164,11 +160,16 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+    (final: _: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (final.stdenv.hostPlatform) system;
+        inherit (final) config;
+      };
+     })
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -190,6 +191,8 @@
     google-chrome
     telegram-desktop
     nekoray
+    unstable.hiddify-app
+    gearlever
     vlc
     remmina
     discord
