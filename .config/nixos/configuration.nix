@@ -21,7 +21,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -81,10 +80,10 @@
              "xkb"
              "us"
             ])
-              (lib.gvariant.mkTuple [
-               "xkb"
-               "ru"
-              ])
+            (lib.gvariant.mkTuple [
+              "xkb"
+              "ru"
+            ])
           ];
         };
 
@@ -92,15 +91,15 @@
           disable-user-extensions = false;
           enabled-extensions = [
             "dash-to-dock@micxgx.gmail.com"
-              "user-theme@gnome-shell-extensions.gcampax.github.com"
-              "system-monitor@gnome-shell-extensions.gcampax.github.com"
-              "status-icons@gnome-shell-extensions.gcampax.github.com"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+            "system-monitor@gnome-shell-extensions.gcampax.github.com"
+            "status-icons@gnome-shell-extensions.gcampax.github.com"
           ];
           favorite-apps =  [
             "google-chrome.desktop"
-              "com.mitchellh.ghostty.desktop"
-              "org.telegram.desktop.desktop"
-              "org.gnome.Nautilus.desktop"
+            "com.mitchellh.ghostty.desktop"
+            "org.telegram.desktop.desktop"
+            "org.gnome.Nautilus.desktop"
           ];
         };
         "org/gnome/shell/extensions/system-monitor" = {
@@ -147,9 +146,6 @@
     pulse.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.elkin = {
     isNormalUser = true;
@@ -191,8 +187,7 @@
     google-chrome
     telegram-desktop
     nekoray
-    unstable.hiddify-app
-    gearlever
+    brave
     vlc
     remmina
     discord
@@ -206,25 +201,6 @@
 
   # Docker
   virtualisation.docker.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
