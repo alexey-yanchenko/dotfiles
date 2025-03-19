@@ -25,3 +25,4 @@ palette = 12=#2A7BDE
 palette = 13=#C061CB
 palette = 14=#33C7DE
 palette = 15=#FFFFFF
+config-file = ?config.override
