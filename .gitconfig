@@ -14,4 +14,15 @@
   last = log -1 HEAD
   lg   = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   st   = status
+[gitflow]
+  multi-hotfix = true
+[gitflow "branch"]
+  master  = master
+  develop = develop
+[gitflow "prefix"]
+  feature = feature/
+  bugfix  = bugfix/
+  release = release/
+  hotfix  = hotfix/
+  support = support/
 

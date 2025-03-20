@@ -5,6 +5,7 @@ bind '"\e[5~": history-search-backward'
 bind '"\e[6~": history-search-forward'
 
 alias dcup='docker compose up'
+alias dcr='docker compose run --rm'
 alias rebuild='sudo nixos-rebuild switch --flake ~/.config/nixos'
 
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/theme.json)"
