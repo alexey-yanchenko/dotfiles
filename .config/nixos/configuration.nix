@@ -91,6 +91,7 @@
           disable-user-extensions = false;
           enabled-extensions = [
             "dash-to-dock@micxgx.gmail.com"
+            "appindicatorsupport@rgcjonas.gmail.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "system-monitor@gnome-shell-extensions.gcampax.github.com"
             "status-icons@gnome-shell-extensions.gcampax.github.com"
@@ -174,6 +175,10 @@
     ripgrep
     fd
     gcc
+    calc
+    dnsutils
+    inetutils
+    mtr
     neovim
     yazi
     git
@@ -196,6 +201,7 @@
     menulibre
     gnome-extension-manager
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.appindicator
     yaru-theme
   ];
 

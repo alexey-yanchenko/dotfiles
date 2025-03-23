@@ -7,5 +7,6 @@ bind '"\e[6~": history-search-forward'
 alias dcup='docker compose up'
 alias dcr='docker compose run --rm'
 alias rebuild='sudo nixos-rebuild switch --flake ~/.config/nixos'
+alias cleanup='sudo nix-collect-garbage && sudo nix-collect-garbage -d && rebuild'
 
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/theme.json)"
