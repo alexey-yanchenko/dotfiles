@@ -25,4 +25,12 @@
   release = release/
   hotfix  = hotfix/
   support = support/
+[gitflow "feature.start"]
+  fetch = true
+[gitflow "feature.finish"]
+  fetch = true
+[gitflow "hotfix.start"]
+  fetch = true
+[gitflow "hotfix.finish"]
+  fetch = true
 
