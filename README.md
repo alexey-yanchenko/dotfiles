@@ -33,7 +33,7 @@ config push
 # Install NixOs
 ```
 nix-shell -p git
-curl -Lks https://raw.githubusercontent.com/alexey-yanchenko/dotfiles/refs/heads/master/.bin/install.sh | bash
+curl -Lks https://bit.ly/4j3Rr37 | bash
 source .bashrc
 cp /etc/nixos/hardware-configuration.nix ~/.config/nixos/
 rebuild
