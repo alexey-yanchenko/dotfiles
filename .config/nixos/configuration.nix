@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./mime.nix
     ];
 
   nix.settings = {
@@ -177,6 +178,7 @@
     dnsutils
     inetutils
     mtr
+    wl-clipboard
     neovim
     yazi
     git
