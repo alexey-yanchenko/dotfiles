@@ -29,3 +29,12 @@ config add <file_name>
 config commit -m "Add <file_name>"
 config push
 ```
+
+# Install NixOs
+```
+nix-shell -p git
+curl -Lks https://raw.githubusercontent.com/alexey-yanchenko/dotfiles/refs/heads/master/.bin/install.sh | bash
+source .bashrc
+cp /etc/nixos/hardware-configuration.nix ~/.config/nixos/
+rebuild
+```
