@@ -73,7 +73,6 @@
         "org/gnome/desktop/wm/preferences" = {
           button-layout = ":minimize,maximize,close";
         };
-
         "org/gnome/desktop/input-sources" = {
           sources = [
             (lib.gvariant.mkTuple [
@@ -86,7 +85,6 @@
             ])
           ];
         };
-
         "org/gnome/shell" = {
           disable-user-extensions = false;
           enabled-extensions = [
@@ -169,7 +167,7 @@
   ];
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # $ nix search wget or better visit search.nixos.org
   environment.systemPackages = with pkgs; [
     btop
     ripgrep
@@ -197,6 +195,7 @@
     remmina
     discord
     shutter
+    libreoffice
     dconf-editor
     menulibre
     gnome-extension-manager
@@ -207,6 +206,8 @@
 
   # Docker
   virtualisation.docker.enable = true;
+  # VirtualBox
+  virtualisation.virtualbox.host.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
