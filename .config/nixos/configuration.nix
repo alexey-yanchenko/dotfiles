@@ -108,6 +108,7 @@
             "com.mitchellh.ghostty.desktop"
             "org.telegram.desktop.desktop"
             "org.gnome.Nautilus.desktop"
+            "org.gnome.TextEditor.desktop"
           ];
         };
         "org/gnome/shell/extensions/system-monitor" = {
