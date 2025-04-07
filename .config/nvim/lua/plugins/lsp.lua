@@ -55,10 +55,10 @@ return {
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover" })
       vim.keymap.set("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition" })
       vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", { desc = "References"})
-      vim.keymap.set("n", "<leader>dd", "<Cmd>lua vim.diagnostic.disable()<cr>", { desc = "Disable LSP diagnostic"})
+      vim.keymap.set("n", "<leader>dd", "<Cmd>lua vim.diagnostic.enable(false)<cr>", { desc = "Disable LSP diagnostic"})
       vim.keymap.set("n", "<leader>de", "<Cmd>lua vim.diagnostic.enable()<cr>", { desc = "Enable LSP diagnostic"})
       -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto Declaration"})
-      vim.diagnostic.disable()
+      vim.diagnostic.enable(false)
       vim.lsp.set_log_level("debug")
     end
   },
