@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./mime.nix
+      ./pbr.nix
     ];
 
   nix.settings = {
@@ -25,25 +26,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.nftables = {
-    enable = true;
-    ruleset = ''
-      table inet fw4 {
-        set vpn_domains {
-        }
-      }
-    '';
-  };
-  networking.firewall.trustedInterfaces = [ "tun0" ];
-  networking.firewall.checkReversePath = "loose";
-  services.dnsmasq = {
-    enable = true;
-    settings = {
-      bind-interfaces = true;
-      listen-address = "127.0.0.1";
-    };
-  };
-
   # Set your time zone.
   time.timeZone = "Asia/Tomsk";
 
