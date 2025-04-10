@@ -25,6 +25,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall.trustedInterfaces = [ "tun0" ];
+  networking.firewall.checkReversePath = "loose";
 
   # Set your time zone.
   time.timeZone = "Asia/Tomsk";
@@ -201,6 +203,7 @@
     google-chrome
     telegram-desktop
     nekoray
+    unstable.sing-box
     brave
     vlc
     remmina
