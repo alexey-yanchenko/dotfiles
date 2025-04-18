@@ -18,6 +18,11 @@
       "flakes"
     ];
   };
+
+  # VPN tun mode
+  services.resolved.enable = true;
+  networking.firewall.checkReversePath = "loose";
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -43,7 +48,6 @@
     LC_TELEPHONE = "ru_RU.UTF-8";
     LC_TIME = "ru_RU.UTF-8";
   };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
