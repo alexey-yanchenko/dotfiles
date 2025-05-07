@@ -190,6 +190,7 @@
     calc
     dnsutils
     inetutils
+    openssl
     mtr
     wl-clipboard
     neovim
@@ -210,6 +211,7 @@
     vlc
     remmina
     discord
+    steam
     shutter
     libreoffice
     dconf-editor
