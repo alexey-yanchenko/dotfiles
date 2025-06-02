@@ -20,8 +20,8 @@
   };
 
   # VPN tun mode
-  services.resolved.enable = true;
-  networking.firewall.checkReversePath = "loose";
+  # services.resolved.enable = true;
+  # networking.firewall.checkReversePath = "loose";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -152,7 +152,7 @@
   programs.steam.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -201,15 +201,16 @@
     yazi
     git
     gitflow
-    ghostty
+    unstable.ghostty
     tmux
-    nerdfonts
+    nerd-fonts.ubuntu-mono
+    nerd-fonts.jetbrains-mono
     fastfetch
     bash-completion
     oh-my-posh
     google-chrome
     telegram-desktop
-    nekoray
+    unstable.nekoray
     unstable.sing-box
     brave
     vlc
