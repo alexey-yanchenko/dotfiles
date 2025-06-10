@@ -20,8 +20,8 @@
   };
 
   # VPN tun mode
-  # services.resolved.enable = true;
-  # networking.firewall.checkReversePath = "loose";
+  services.resolved.enable = true;
+  networking.firewall.checkReversePath = "loose";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -184,6 +184,9 @@
      })
   ];
 
+  environment.variables = {
+    GI_TYPELIB_PATH = "/run/current-system/sw/lib/girepository-1.0";
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget or better visit search.nixos.org
   environment.systemPackages = with pkgs; [
@@ -220,6 +223,7 @@
     libreoffice
     dconf-editor
     menulibre
+    libgtop
     gnome-extension-manager
     gnomeExtensions.dash-to-dock
     gnomeExtensions.appindicator
