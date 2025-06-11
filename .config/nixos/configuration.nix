@@ -219,6 +219,7 @@
     vlc
     remmina
     discord
+    yt-dlp
     shutter
     libreoffice
     dconf-editor
