@@ -24,6 +24,7 @@ return {
           { "<leader>f", group = "file/find" },
           { "<leader>q", group = "quit/session" },
           { "<leader>s", group = "search" },
+          { "<leader>a", group = "AI" },
           { "<leader>u", group = "ui" },
           { "<leader>w", group = "windows" },
           { "[", group = "prev" },
