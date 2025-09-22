@@ -5,7 +5,6 @@ return {
       {'hrsh7th/cmp-nvim-lsp'},
     },
     config = function()
-      local lspconfig = require("lspconfig")
 
       for name, icon in pairs(require("config.icons").diagnostics) do
         name = "DiagnosticSign" .. name
@@ -31,22 +30,23 @@ return {
       }
       vim.diagnostic.config(vim.deepcopy(diagnostics))
 
-      lspconfig.solargraph.setup({
-        cmd = { "docker", "compose", "exec", "web", "bundle", "exec", "solargraph" , "stdio" },
-        filetypes = { "ruby" },
-        root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
-        settings = {
-          solargraph = {
-            autoformat = true,
-            completion = true,
-            diagnostic = false,
-            folding = true,
-            references = true,
-            rename = true,
-            symbols = true
-          }
-        },
-      })
+      vim.lsp.config('solargraph',
+        {
+          cmd = { "docker", "compose", "exec", "web", "bundle", "exec", "solargraph" , "stdio" },
+          filetypes = { "ruby" },
+          root_markers = { "Gemfile", ".git" },
+          settings = {
+            solargraph = {
+              autoformat = true,
+              completion = true,
+              diagnostic = false,
+              folding = true,
+              references = true,
+              rename = true,
+              symbols = true
+            }
+          },
+        })
       -- lspconfig.ruby_ls.setup({
       -- 	cmd = { "docker", "compose", "exec", "web", "bundle", "exec", "ruby-lsp" },
       --   filetypes = { "ruby" },
