@@ -7,19 +7,28 @@ return {
     build = "make",
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
-    ---@module 'avante'
-    ---@type avante.Config
     opts = {
       -- add any opts here
       -- this file can contain specific instructions for your project
       instructions_file = "avante.md",
       -- for example
-      provider = "openrouter",
+      provider = "openrouter_1",
       providers = {
-        openrouter = {
+        openrouter_1 = {
           __inherited_from = "openai",
           endpoint = "https://openrouter.ai/api/v1/",
           model = "x-ai/grok-code-fast-1",
+          api_key_name = 'OPENROUTER_API_KEY',
+          timeout = 30000, -- Timeout in milliseconds
+            extra_request_body = {
+              temperature = 0.75,
+              max_tokens = 16000
+            },
+        },
+        openrouter_2 = {
+          __inherited_from = "openai",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "anthropic/claude-sonnet-4",
           api_key_name = 'OPENROUTER_API_KEY',
           timeout = 30000, -- Timeout in milliseconds
             extra_request_body = {
