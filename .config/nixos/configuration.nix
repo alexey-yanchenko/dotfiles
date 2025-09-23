@@ -194,6 +194,7 @@
     ripgrep
     fd
     gcc
+    gnumake
     calc
     dnsutils
     inetutils
