@@ -16,9 +16,9 @@ return {
       providers = {
         openrouter_1 = {
           __inherited_from = "openai",
-          endpoint = "https://openrouter.ai/api/v1/",
+          endpoint = "https://routerai.ru/api/v1/",
           model = "x-ai/grok-code-fast-1",
-          api_key_name = 'OPENROUTER_API_KEY',
+          api_key_name = 'ROUTERAI_API_KEY',
           timeout = 30000, -- Timeout in milliseconds
             extra_request_body = {
               temperature = 0.75,
@@ -27,9 +27,9 @@ return {
         },
         openrouter_2 = {
           __inherited_from = "openai",
-          endpoint = "https://openrouter.ai/api/v1/",
+          endpoint = "https://routerai.ru/api/v1/",
           model = "anthropic/claude-sonnet-4",
-          api_key_name = 'OPENROUTER_API_KEY',
+          api_key_name = 'ROUTERAI_API_KEY',
           timeout = 30000, -- Timeout in milliseconds
             extra_request_body = {
               temperature = 0.75,
