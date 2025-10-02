@@ -12,39 +12,37 @@ return {
       -- this file can contain specific instructions for your project
       instructions_file = "avante.md",
       -- for example
-      provider = "openrouter_1",
+      provider = "openrouter",
       providers = {
-        openrouter_1 = {
+        openrouter = {
           __inherited_from = "openai",
           endpoint = "https://routerai.ru/api/v1/",
-          model = "x-ai/grok-code-fast-1",
+          model = "anthropic/claude-sonnet-4.5",
+          disabled_tools = { "python" },
+          model_names = {
+            "x-ai/grok-code-fast-1",
+            "anthropic/claude-sonnet-4.5",
+          },
           api_key_name = 'ROUTERAI_API_KEY',
           timeout = 30000, -- Timeout in milliseconds
-            extra_request_body = {
-              temperature = 0.75,
-              max_tokens = 16000
-            },
+          extra_request_body = {
+            temperature = 0.75,
+            max_tokens = 16000
+          },
+          extra_headers = {
+            ["HTTP-Referer"] = "https://github.com/yetone/avante.nvim",
+            ["X-Title"] = "Avante.nvim"
+          }
         },
-        openrouter_2 = {
-          __inherited_from = "openai",
-          endpoint = "https://routerai.ru/api/v1/",
-          model = "anthropic/claude-sonnet-4",
-          api_key_name = 'ROUTERAI_API_KEY',
-          timeout = 30000, -- Timeout in milliseconds
-            extra_request_body = {
-              temperature = 0.75,
-              max_tokens = 16000
-            },
-        },
-        openai = {
-          endpoint = "https://kivanov.msndr.net/v1",
-          model = "gpt-4o-mini",
-          timeout = 30000, -- Timeout in milliseconds
-            extra_request_body = {
-              temperature = 0.75,
-              max_tokens = 16000,
-            },
-        },
+        -- openai = {
+        --   endpoint = "https://kivanov.msndr.net/v1",
+        --   model = "gpt-4o-mini",
+        --   timeout = 30000, -- Timeout in milliseconds
+        --     extra_request_body = {
+        --       temperature = 0.75,
+        --       max_tokens = 16000,
+        --     },
+        -- },
       },
     },
     dependencies = {
