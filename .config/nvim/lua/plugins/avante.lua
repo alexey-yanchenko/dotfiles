@@ -1,7 +1,6 @@
 return {
   {
     "yetone/avante.nvim",
-    tag = "v0.0.25",
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     -- ⚠️ must add this setting! ! !
     build = "make",
@@ -12,6 +11,7 @@ return {
       -- this file can contain specific instructions for your project
       instructions_file = "avante.md",
       -- for example
+      -- mode = "legacy",
       provider = "openrouter",
       providers = {
         openrouter = {
@@ -43,6 +43,9 @@ return {
         --       max_tokens = 16000,
         --     },
         -- },
+      },
+      behaviour = {
+        auto_approve_tool_permissions = false
       },
     },
     dependencies = {
