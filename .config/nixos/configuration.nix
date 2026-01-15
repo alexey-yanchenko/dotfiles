@@ -204,14 +204,16 @@
     neovim
     yazi
     git
+    git-lfs
     gitflow
-    unstable.ghostty
+    ghostty
     tmux
     nerd-fonts.ubuntu-mono
     nerd-fonts.jetbrains-mono
     fastfetch
     bash-completion
     oh-my-posh
+    unstable.opencode
     google-chrome
     telegram-desktop
     unstable.nekoray
