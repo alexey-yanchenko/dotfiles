@@ -22,6 +22,10 @@
   # VPN tun mode
   services.resolved.enable = true;
   networking.firewall.checkReversePath = "loose";
+  programs.throne = {
+    enable = true;
+    tunMode.enable = true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -216,7 +220,6 @@
     unstable.opencode
     google-chrome
     telegram-desktop
-    unstable.nekoray
     unstable.sing-box
     brave
     vlc
