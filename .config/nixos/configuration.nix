@@ -12,6 +12,14 @@
       #./pbr.nix
     ];
 
+  programs = {
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        # openssl
+      ];
+    };
+  };
   nix.settings = {
     experimental-features = [
       "nix-command"
