@@ -9,7 +9,7 @@ alias dcr='docker compose run --rm'
 alias rebuild='sudo nixos-rebuild switch --flake ~/.config/nixos'
 alias cleanup='sudo nix-collect-garbage && sudo nix-collect-garbage -d && rebuild'
 alias avante='nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
-alias vi='nvim'
-alias vim='nvim'
+alias vi='LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH nvim'
+alias vim='LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH nvim'
 
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/theme.json)"
