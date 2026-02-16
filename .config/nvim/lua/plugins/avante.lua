@@ -6,7 +6,7 @@ return {
     version = false,
     opts = {
       instructions_file = "avante.md",
-      provider = "routerai",
+      provider = "cliproxy",
       providers = {
         routerai = {
           __inherited_from = "openai",
@@ -40,7 +40,23 @@ return {
             temperature = 0.75,
             max_tokens = 20480,
           },
-        }
+        },
+        cliproxy = {
+          __inherited_from = "openai",
+          endpoint = "https://vibecoding.bot.nu/v1",
+          model = "anthropic/claude-sonnet-4.5", -- Модель по умолчанию
+          disabled_tools = { "python" }, -- Здесь можно указать какие инструменты Avante не будет использовать
+          model_names = { -- Список моделей доступных для выбора
+            "anthropic/claude-sonnet-4.5",
+            "anthropic/claude-opus-4.6",
+            "anthropic/claude-haiku-4.5",
+          },
+          api_key_name = 'CLIPROXY_API_KEY',
+          timeout = 30000,
+          extra_request_body = {
+            temperature = 0.75
+          }
+        },
       },
       behaviour = {
         auto_approve_tool_permissions = false
