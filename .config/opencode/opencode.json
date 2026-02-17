@@ -3,10 +3,12 @@
   "permission": {
     "edit": "ask",
     "bash": {
-      "ls*": "allow",
-      "find*": "allow",
-      "head*": "allow",
-      "*": "ask"
+      "*": "ask",
+      "ls *": "allow",
+      "find *": "allow",
+      "head *": "allow",
+      "grep *": "ask",
+      "head *": "ask",
     }
   },
    "provider": {
@@ -18,7 +20,8 @@
         "setCacheKey": true
       },
       "models": {
-        "anthropic/claude-sonnet-4.5": { "name": "Claude Sonnet 4.5" } // Define the models available
+        "anthropic/claude-sonnet-4.5": { "name": "Claude Sonnet 4.5" },
+        "anthropic/claude-opus-4.6": { "name": "Claude Opus 4.6" }
       }
     },
     "cliproxy": {
@@ -30,7 +33,7 @@
       },
       "models": {
         "anthropic/claude-sonnet-4.5": { "name": "Claude Sonnet 4.5" },
-        "anthropic/claude-opus-4.6": { "name": "Claude Opus 4.6" },
+        "anthropic/claude-opus-4.6": { "name": "Claude Opus 4.6" }
       }
     },
   }

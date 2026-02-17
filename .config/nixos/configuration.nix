@@ -198,6 +198,10 @@
 
   environment.variables = {
     GI_TYPELIB_PATH = "/run/current-system/sw/lib/girepository-1.0";
+    HISTSIZE = "10000";
+    HISTFILESIZE = "20000";
+    HISTAPPEND = "on";
+    HISTCONTROL = "ignoreboth";
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget or better visit search.nixos.org
