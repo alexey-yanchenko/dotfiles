@@ -11,13 +11,13 @@ return {
         routerai = {
           __inherited_from = "openai",
           endpoint = "https://routerai.ru/api/v1/",
-          model = "anthropic/claude-sonnet-4.5", -- Модель по умолчанию
+          model = "anthropic/claude-sonnet-4.6", -- Модель по умолчанию
           disabled_tools = { "python" }, -- Здесь можно указать какие инструменты Avante не будет использовать
           model_names = { -- Список моделей доступных для выбора
             "x-ai/grok-code-fast-1",
             "x-ai/grok-4.1-fast",
             "qwen/qwen3-coder-plus",
-            "anthropic/claude-sonnet-4.5",
+            "anthropic/claude-sonnet-4.6",
             "anthropic/claude-haiku-4.5",
           },
           api_key_name = 'ROUTERAI_API_KEY',
@@ -31,23 +31,13 @@ return {
             ["X-Title"] = "Avante.nvim"
           }
         },
-        claude = {
-          endpoint = "https://api.anthropic.com",
-          model = "claude-opus-4-5-20251101",
-          auth_type = "max",
-          timeout = 30000, -- Timeout in milliseconds
-          extra_request_body = {
-            temperature = 0.75,
-            max_tokens = 20480,
-          },
-        },
         cliproxy = {
           __inherited_from = "openai",
           endpoint = "https://vibecoding.bot.nu/v1",
-          model = "anthropic/claude-sonnet-4.5", -- Модель по умолчанию
+          model = "anthropic/claude-sonnet-4.6", -- Модель по умолчанию
           disabled_tools = { "python" }, -- Здесь можно указать какие инструменты Avante не будет использовать
           model_names = { -- Список моделей доступных для выбора
-            "anthropic/claude-sonnet-4.5",
+            "anthropic/claude-sonnet-4.6",
             "anthropic/claude-opus-4.6",
             "anthropic/claude-haiku-4.5",
           },
