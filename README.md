@@ -32,6 +32,7 @@ config push
 
 # Install NixOs
 ```
+nmcli device wifi connect <SSID> password <password> # if needed
 nix-shell -p git
 curl -Lks https://bit.ly/4j3Rr37 | bash
 source .bashrc
