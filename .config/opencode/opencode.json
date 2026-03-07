@@ -38,7 +38,18 @@
         "anthropic/antigravity-sonnet-4.6": { "name": "Antigravity Sonnet 4.6" },
         "anthropic/claude-opus-4.6": { "name": "Claude Opus 4.6" },
         "z-ai/glm-5": { "name": "GLM 5" },
-        "z-ai/glm-4.7": { "name": "GLM 4.7" },
+      }
+    },
+    "cliproxy-team": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "CLIProxy Team",
+      "options": {
+        "baseURL": "https://vibecoding-team.bot.nu/v1",
+        "setCacheKey": true,
+      },
+      "models": {
+        "vibecoding/sonnet-4.6": { "name": "Sonnet 4.6" },
+        "vibecoding/opus-4.6": { "name": "Opus 4.6" },
       }
     },
   }
