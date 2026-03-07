@@ -109,6 +109,7 @@
               "ru"
             ])
           ];
+          xkb-options = [ "caps:escape" ];
         };
         "org/gnome/shell" = {
           disable-user-extensions = false;
