@@ -27,6 +27,7 @@
     ];
   };
 
+  environment.etc.hosts.mode = "0644";
   # VPN tun mode
   services.resolved.enable = true;
   networking.firewall.checkReversePath = "loose";
