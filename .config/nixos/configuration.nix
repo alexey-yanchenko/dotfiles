@@ -211,6 +211,7 @@
     btop
     ripgrep
     fd
+    jq
     gcc
     gnumake
     calc
