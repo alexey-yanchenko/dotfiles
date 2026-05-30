@@ -233,7 +233,6 @@
     bash-completion
     oh-my-posh
     unstable.opencode
-    unstable.claude-code
     google-chrome
     telegram-desktop
     unstable.sing-box
