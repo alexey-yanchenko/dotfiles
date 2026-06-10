@@ -254,6 +254,7 @@
 
   # Docker
   virtualisation.docker.enable = true;
+  virtualisation.docker.package = pkgs.docker_29;
   # VirtualBox
   # virtualisation.virtualbox.host.enable = true;
 
