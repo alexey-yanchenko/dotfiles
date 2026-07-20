@@ -181,7 +181,7 @@
   users.users.elkin = {
     isNormalUser = true;
     description = "Elkin";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxsf" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -256,7 +256,12 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.package = pkgs.docker_29;
   # VirtualBox
-  # virtualisation.virtualbox.host.enable = true;
+   virtualisation.virtualbox.host.enable = true;
+   # Fix: VirtualBox падает при открытии файлового диалога (например "Add" для
+   # существующей VM) из-за отсутствия GTK3-схемы org.gtk.Settings.FileChooser.
+   environment.sessionVariables.XDG_DATA_DIRS = [
+     "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
+   ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
