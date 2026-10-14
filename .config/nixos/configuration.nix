@@ -44,6 +44,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall.interfaces.eno1 = {
+    allowedTCPPorts = [ 22127 ];
+    allowedUDPPortRanges = [ { from = 21127; to = 21128; } ];
+  };
   # Set your time zone.
   time.timeZone = "Asia/Tomsk";
 
@@ -214,6 +218,7 @@
     jq
     gcc
     gnumake
+    unstable.bun
     calc
     dnsutils
     inetutils
@@ -232,10 +237,10 @@
     fastfetch
     bash-completion
     oh-my-posh
-    unstable.opencode
     google-chrome
-    telegram-desktop
+    unstable.telegram-desktop
     unstable.sing-box
+    tor-browser
     brave
     vlc
     remmina
